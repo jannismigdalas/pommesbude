@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.alivepdf</groupId>
+    <artifactId>alivepdf</artifactId>
+    <version>0.1.5.RC</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>org.alivepdf</artifactId>
+  <name>AlivePDF</name>
+  <packaging>swc</packaging>
+
+  <url>http://code.google.com/p/alivepdf/</url>
+
+  <dependencies>
+    <!-- flash -->
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>playerglobal</artifactId>
+      <type>swc</type>
+      <classifier>10.2</classifier>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>playerglobal</artifactId>
+      <type>rb.swc</type>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>core</artifactId>
+      <type>swc</type>
+    </dependency>
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>framework</artifactId>
+      <type>swc</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <sourceDirectory>src/main/flex</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.flexmojos</groupId>
+        <artifactId>flexmojos-maven-plugin</artifactId>
+        <version>${org.sonatype.flexmojos.version}</version>
+        <extensions>true</extensions>
+        <dependencies>
+          <dependency>
+            <groupId>com.adobe.flex</groupId>
+            <artifactId>compiler</artifactId>
+            <version>${com.adobe.flex.version}</version>
+            <type>pom</type>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <targetPlayer>10.2.0</targetPlayer>
+          <debug>false</debug>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

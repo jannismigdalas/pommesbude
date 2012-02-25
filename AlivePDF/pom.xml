@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.alivepdf</groupId>
+  <artifactId>alivepdf</artifactId>
+  <version>0.1.5.RC</version>
+  <name>AlivePDF project</name>
+  <packaging>pom</packaging>
+
+  <url>http://code.google.com/p/alivepdf/</url>
+
+  <licenses>
+    <license>
+      <name>The MIT License (MIT)</name>
+      <url>http://www.opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <com.adobe.flex.version>4.5.1.21328</com.adobe.flex.version>
+    <com.adobe.flash.player.version>10.2</com.adobe.flash.player.version>
+    <org.sonatype.flexmojos.version>4.2-beta</org.sonatype.flexmojos.version>
+    <locale>en_US</locale>
+  </properties>
+
+  <modules>
+    <module>org.alivepdf</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- flash -->
+      <dependency>
+        <groupId>com.adobe.flex.framework</groupId>
+        <artifactId>playerglobal</artifactId>
+        <version>${com.adobe.flex.version}</version>
+        <classifier>${com.adobe.flash.player.version}</classifier>
+        <type>swc</type>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.flex.framework</groupId>
+        <artifactId>playerglobal</artifactId>
+        <version>${com.adobe.flex.version}</version>
+        <type>rb.swc</type>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.flex.framework</groupId>
+        <artifactId>core</artifactId>
+        <version>${com.adobe.flex.version}</version>
+        <type>swc</type>
+      </dependency>
+      <dependency>
+        <groupId>com.adobe.flex.framework</groupId>
+        <artifactId>framework</artifactId>
+        <version>${com.adobe.flex.version}</version>
+        <type>swc</type>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <repositories>
+    <repository>
+      <id>sonatype</id>
+      <url>http://repository.sonatype.org/content/groups/public/</url>
+    </repository>
+    <repository>
+      <id>flex</id>
+      <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>sonatype</id>
+      <url>http://repository.sonatype.org/content/groups/public/</url>
+    </pluginRepository>
+    <pluginRepository>
+      <id>flex</id>
+      <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>
